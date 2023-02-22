@@ -11,7 +11,7 @@ namespace EquipmentPlacementService.Tests
         public EquipmentPlacementServiceSeedDataFixture()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("MovieListDatabase")
+                .UseInMemoryDatabase("EquipmentPlacementServiceTestDb")
                 .Options;
 
             ApplicationDbContext = new ApplicationDbContext(options);
