@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquipmentPlacementService", "EquipmentPlacementService\EquipmentPlacementService.csproj", "{299EE857-5F03-4FA0-9E4E-ED4F1B71334B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquipmentPlacementService.Tests", "EquipmentPlacementService.Tests\EquipmentPlacementService.Tests.csproj", "{56984C17-E962-4DE3-9E93-BCA69D4CE2C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{299EE857-5F03-4FA0-9E4E-ED4F1B71334B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{299EE857-5F03-4FA0-9E4E-ED4F1B71334B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{299EE857-5F03-4FA0-9E4E-ED4F1B71334B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56984C17-E962-4DE3-9E93-BCA69D4CE2C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56984C17-E962-4DE3-9E93-BCA69D4CE2C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56984C17-E962-4DE3-9E93-BCA69D4CE2C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56984C17-E962-4DE3-9E93-BCA69D4CE2C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

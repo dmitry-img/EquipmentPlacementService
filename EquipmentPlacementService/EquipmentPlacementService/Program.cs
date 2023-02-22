@@ -1,23 +1,37 @@
+using EquipmentPlacementService.Data;
+using EquipmentPlacementService.Infrastructure.Extensions;
+using EquipmentPlacementService.Infrastructure.Middlewares;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services
+    .AddDatabase(builder.Configuration)
+    .AddApplicationServices()
+    .AddSwagger();
+
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseMiddleware<ExceptionMiddleware>();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    using (var scope = app.Services.CreateScope())
+    {
+        var initialiser = scope.ServiceProvider.GetRequiredService<ApplicationDbContextInitialiser>();
+        await initialiser.SeedAsync();
+    }
 }
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<ApiKeyMiddleware>(builder.Configuration);
 app.UseAuthorization();
 
 app.MapControllers();
